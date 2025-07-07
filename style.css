@@ -122,14 +122,14 @@ h1 {
     font-family: 'Canela', sans-serif;
     /* font-size: 60px; */
     /* font-size: clamp([value-min], [value-preferred], [value-max]); */
-    font-size: clamp(25px, 3vw, 40px);
+    font-size: clamp(25px, 3vw, 55px);
     font-weight: 400;
     line-height: 100%;
     letter-spacing: 1%;
     /* margin-bottom: 30px; */
 
     /* width: 20ch; */
-    width: 360px;
+    width: 400px;
     z-index: 10;
 }
 
@@ -138,7 +138,7 @@ h2 {
     font-family: 'Canela', sans-serif;
     /* font-size: 30px; */
     /* font-size: clamp([value-min], [value-preferred], [value-max]); */
-    font-size: clamp(25px, 2vw, 20px);
+    font-size: clamp(25px, 2vw, 30px);
     line-height: 100%;
     font-weight: 400;
     color: #808080;
@@ -192,7 +192,7 @@ nav .links {
 
 .welcome {
     position: absolute;
-    top: 40vh;
+    top: 42vh;
     left: 60px;
     display: flex;
     flex-direction: column;
