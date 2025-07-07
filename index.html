@@ -35,14 +35,18 @@
     </div>
 
     <footer id="footer">
-        <a href="mailto:info@hruby.studio">info@hruby.studio</a><br style="margin-bottom: 20px;" />
-        Appointments by<br />arrangement.<br /><br />
-        Friedrichstr. 3<br />
-        80801 München<br />
-        Germany<br /><br />
+        <span>
+            <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
+            <div class="spacer"></div>
+            Appointments by<br />arrangement.<br /><br />
+            Friedrichstr. 3<br />
+            80801 München<br />
+            Germany<br /><br />
+        </span>
+
+        <div class="copyright">&copy; Hruby</div>
     </footer>
 
-    <div class="copyright">&copy; Hruby</div>
 
     <script>
         let mm = gsap.matchMedia();
@@ -69,8 +73,8 @@
                     scale: 1
                 }, "+=0.4")
                 .fromTo(".video-wrapper video", { scale: 1.05, opacity: 0.8 }, { scale: 1, opacity: 1 }, "-=0.6")
-                .fromTo("h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "+=10")
-                .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "+=0.2")
+                .fromTo("h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=2")
+                .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.4")
                 .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "+=0.2")
             // .fromTo("footer", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "+=0.4")
             // .fromTo(".copyright", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "+=0.5");
@@ -111,35 +115,37 @@
 
         // Animate footer on scroll into view
         gsap.fromTo("footer",
-            { opacity: 0, y: 40 },
+            { opacity: 0, y: 100 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                duration: 2,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: "footer",
-                    start: "top 80%", // trigger when top of footer hits 80% of viewport height
-                    toggleActions: "play none none none"
+                    start: "top bottom", // trigger when top of footer hits 99% of viewport height
+                    // element viewport
+                    end: "top bottom",
+                    // toggleActions: "play none none none"
                 }
             }
         );
 
         // Animate copyright as well
-        gsap.fromTo(".copyright",
-            { opacity: 0, y: 20 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".copyright",
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
+        // gsap.fromTo(".copyright",
+        //     { opacity: 0, y: 20 },
+        //     {
+        //         opacity: 1,
+        //         y: 0,
+        //         duration: 1,
+        //         ease: "power2.out",
+        //         scrollTrigger: {
+        //             trigger: ".copyright",
+        //             start: "top 99%",
+        //             toggleActions: "play none none none"
+        //         }
+        //     }
+        // );
 
 
         const video = document.getElementById('automatic');

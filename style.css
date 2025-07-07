@@ -20,7 +20,7 @@
 
 * {
     margin: 0;
-    /* border: 1px solid green; */
+    /* border: 1px solid hotpink; */
 }
 
 html {
@@ -108,15 +108,44 @@ a:hover {
 
 footer {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
     top: calc(100vh + 50px);
     height: 120px;
-    left: 60px;
+    left: 0;
+    width: 100%;
     color: #808080;
+    /* background: rgba(0, 128, 0, 0.487); */
+    /* columns: 2; */
+    font-family: 'Atlas Grotesk', sans-serif;
+}
+
+footer span {
+    position: absolute;
+    /* top: calc(100vh + 50px); */
+    height: 160px;
+    left: 60px;
     columns: 2;
     gap: 60px;
     font-family: 'Atlas Grotesk', sans-serif;
 }
 
+footer .spacer {
+    height: 20px;
+}
+
+.copyright {
+    position: absolute;
+    width: fit-content;
+    height: 20px;
+    display: flex;
+    text-align: right;
+    bottom: 30px;
+    right: 60px;
+    font-family: 'Atlas Grotesk', sans-serif;
+    font-size: 15px;
+    color: #808080;
+}
 
 h1 {
     font-family: 'Canela', sans-serif;
@@ -126,10 +155,8 @@ h1 {
     font-weight: 400;
     line-height: 100%;
     letter-spacing: 1%;
-    /* margin-bottom: 30px; */
-
     /* width: 20ch; */
-    width: 400px;
+    width: 100%;
     z-index: 10;
 }
 
@@ -174,20 +201,6 @@ nav .links {
     display: flex;
     gap: 30px;
     font-size: 15px;
-}
-
-.copyright {
-    position: absolute;
-    width: fit-content;
-    height: 40px;
-    display: flex;
-    gap: 30px;
-    height: 50px;
-    top: calc(100vh + 150px);
-    right: 60px;
-    font-family: 'Atlas Grotesk', sans-serif;
-    font-size: 15px;
-    color: #808080;
 }
 
 .welcome {
@@ -235,15 +248,6 @@ video {
         gap: 20px;
     }
 
-    .copyright {
-        position: absolute;
-        right: 30px;
-        bottom: 30px;
-        top: 1140px;
-        /* height: 40px; */
-        font-size: 14px !important;
-    }
-
     .logo {
         position: absolute;
         top: 30px;
@@ -260,13 +264,25 @@ video {
     }
 
     footer {
-        top: calc(100svh + 320px);
+        /* top: calc(100svh + 320px); */
+        top: 1000px;
+        height: 160px;
+        /* left: 0px; */
+        /* columns: 2; */
+        font-size: 14px !important;
+        z-index: 10;
+    }
+
+    footer span {
         height: 160px;
         left: 30px;
-        columns: 2;
-        gap: 60px;
-        font-size: 14px;
-        z-index: 10;
+    }
+
+    .copyright {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        font-size: 14px !important;
     }
 
     nav {
