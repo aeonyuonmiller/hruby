@@ -15,13 +15,14 @@
     <nav>
         <img class="logo" style="margin-bottom: 40px;" src="assets/Hruby-Logo.svg" alt="Hruby Logo" />
         <div class="links">
-            <a href="https://www.instagram.com/antjehruby/">Instagram</a>
-            <a href="mailto:ah@hrubyinteriors.com">Contact</a>
+            <a href="https://www.instagram.com/antjehruby/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <!-- <a href="mailto:ah@hrubyinteriors.com">Contact</a> -->
+            <a href="#footer">Contact</a>
         </div>
     </nav>
 
     <div class="welcome">
-        <h1>Homes crafted for lasting memories.</h1>
+        <h1>Homes crafted for<br />lasting memories.</h1>
         <h2>New website coming soon …</h2>
     </div>
 
@@ -32,7 +33,7 @@
         </video>
     </div>
 
-    <footer>
+    <footer id="footer">
         <a href="mailto:info@hruby.studio">info@hruby.studio</a><br style="margin-bottom: 20px;" />
         Appointments by<br />arrangement.<br /><br />
         Friedrichstr. 3<br />
@@ -46,8 +47,8 @@
     <script>
         const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power2.out" } });
 
-        tl.fromTo(".logo", { opacity: 0, y: 20 }, { opacity: 1, y: 0 })
-            .fromTo(".video-wrapper", { clipPath: "inset(100% 0% 0% 0%)", opacity: 0, y: 40, scale: 1.01, position: "absolute", margin: "0 auto", right: "30vw" }, { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, y: 0, scale: .8 }, "+=0.4")
+        tl.fromTo(".logo", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=1.6")
+            .fromTo(".video-wrapper", { clipPath: "inset(100% 0% 0% 0%)", opacity: 0, y: 40, scale: 1.01, position: "absolute", right: "30vw" }, { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, y: 0, scale: .8 }, "+=0.4")
             // .fromTo(".video-wrapper", { clipPath: "inset(100% 0% 0% 0%)", opacity: 0, y: 40, scale: 1.01, margin: "0 auto" }, { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, y: 0, scale: 1 }, "-=0.4")
             .to(".video-wrapper", { right: "0vw", scale: 1 }, "+=0.4")
             .fromTo(".video-wrapper video", { scale: 1.05, opacity: 0.8 }, { scale: 1, opacity: 1 }, "-=0.4")
