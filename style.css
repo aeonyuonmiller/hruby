@@ -264,7 +264,7 @@ video {
         height: 160px;
         left: 30px;
         columns: 2;
-        gap: 30px;
+        gap: 60px;
         font-size: 14px;
         z-index: 10;
     }
