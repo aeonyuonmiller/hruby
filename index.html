@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRUBY Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+
+</head>
+
+<body>
+    <!-- <div class="container"> -->
+    <nav>
+        <img class="logo" style="margin-bottom: 40px;" src="/assets/Hruby-Logo.svg" alt="Hruby Logo" />
+        <div class="links">
+            <a href="https://www.instagram.com/antjehruby/">Instagram</a>
+            <a href="mailto:ah@hrubyinteriors.com">Contact</a>
+        </div>
+    </nav>
+
+    <div class="welcome">
+        <h1>Homes crafted for lasting memories.</h1>
+        <h2>New website coming soon …</h2>
+    </div>
+
+    <div class="video-wrapper">
+        <video preload="none" autoplay loop muted playsinline poster="assets/video-poster.png">
+            <source src="assets/intro-265.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <footer>
+        <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
+        Appointments by<br />arrangement.<br /><br />
+        Friedrichstr. 3<br />
+        80801 München<br />
+        Germany<br /><br />
+        <!-- Mobile: <a href="tel:+491733820599">+49 (0) 173 3820599</a><br /> -->
+    </footer>
+    <!-- </div> -->
+
+    <div class="copyright">&copy; Hruby Studio</div>
+
+
+    <script>
+        const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power2.out" } });
+
+        tl.fromTo(".logo", { opacity: 0, y: 20 }, { opacity: 1, y: 0 })
+            .fromTo("nav", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.4")
+            .fromTo(".video-wrapper", { opacity: 0, y: 40, scale: .5, margin: "0 auto" }, { opacity: 1, y: 0, scale: 1 }, "-=0.4")
+            .fromTo(".video-wrapper video", { scale: 1.2, opacity: 0.8 }, { scale: 1, opacity: 1 }, "-=0.4")
+            .fromTo("h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.4")
+            .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.6")
+            .fromTo("footer", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=0.4")
+            .fromTo(".copyright", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=0.5");
+    </script>
+
+
+</body>
+
+</html>
