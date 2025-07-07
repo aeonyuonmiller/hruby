@@ -155,7 +155,7 @@ h2 {
 }
 
 nav {
-    position: fixed;
+    position: absolute;
     display: flex;
     /* justify-content: flex-end; */
     align-items: center;
