@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- <div class="container"> -->
     <nav>
         <img class="logo" style="margin-bottom: 40px;" src="assets/Hruby-Logo.svg" alt="Hruby Logo" />
         <div class="links">
@@ -39,20 +38,18 @@
         Friedrichstr. 3<br />
         80801 München<br />
         Germany<br /><br />
-        <!-- Mobile: <a href="tel:+491733820599">+49 (0) 173 3820599</a><br /> -->
     </footer>
-    <!-- </div> -->
 
-    <div class="copyright">&copy; Hruby Studio</div>
+    <div class="copyright">&copy; Hruby</div>
 
 
     <script>
         const tl = gsap.timeline({ defaults: { duration: 0.8, ease: "power2.out" } });
 
         tl.fromTo(".logo", { opacity: 0, y: 20 }, { opacity: 1, y: 0 })
+            .fromTo(".video-wrapper", { clipPath: "inset(100% 0% 0% 0%)", opacity: 0, y: 40, scale: 1.01, margin: "0 auto" }, { clipPath: "inset(0% 0% 0% 0%)", opacity: 1, y: 0, scale: 1 }, "-=0.4")
+            .fromTo(".video-wrapper video", { scale: 1.05, opacity: 0.8 }, { scale: 1, opacity: 1 }, "-=0.4")
             .fromTo("nav", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.4")
-            .fromTo(".video-wrapper", { opacity: 0, y: 40, scale: .5, margin: "0 auto" }, { opacity: 1, y: 0, scale: 1 }, "-=0.4")
-            .fromTo(".video-wrapper video", { scale: 1.2, opacity: 0.8 }, { scale: 1, opacity: 1 }, "-=0.4")
             .fromTo("h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.4")
             .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.6")
             .fromTo("footer", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=0.4")

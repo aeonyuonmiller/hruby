@@ -30,7 +30,10 @@
 
 body {
     background: #FFFCFC;
+    font-size: 8px;
     line-height: 1.5;
+    max-width: 100vw;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -206,14 +209,20 @@ video {
 
 @media only screen and (max-width: 700px) {
     .welcome {
-        position: fixed;
+        position: relative;
         /* top: calc(50vh + 150px); */
         top: 820px;
         left: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .copyright {
+        position: absolute;
         right: 30px;
+        bottom: 20px;
+        font-size: 10px !important;
     }
 
     .logo {
@@ -230,7 +239,8 @@ video {
     }
 
     footer {
-        bottom: 90px;
+        top: 1050px;
+        /* bottom: 90px; */
         left: 30px;
         columns: 2;
         gap: 30px;
