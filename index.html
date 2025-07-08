@@ -78,9 +78,11 @@
                 .to(".video-wrapper", {
                     right: "0vw",
                     y: 0,
-                    scale: 1
+                    scale: 1,
+                    duration: 1.6,
+                    ease: "power4.inOut"
                 }, "+=15")
-                .fromTo(".video-wrapper video", { scale: 1.05, opacity: 1 }, { scale: 1, opacity: 1 }, "-=0.6")
+                // .fromTo(".video-wrapper video", { scale: 1.05, opacity: 1 }, { scale: 1, opacity: 1 }, "-=0.6")
                 .fromTo(lines, { opacity: 0, y: 60 }, {
                     opacity: 1,
                     y: 0,
