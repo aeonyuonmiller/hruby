@@ -62,53 +62,53 @@
 
             const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
-            tl.fromTo(".logo", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=1.6")
-                .fromTo(".video-wrapper", {
-                    clipPath: "inset(100% 0% 0% 0%)",
-                    opacity: 0,
-                    y: 40,
-                    scale: 1.01,
-                    position: "absolute",
-                    right: "30vw"
-                }, {
-                    clipPath: "inset(0% 0% 0% 0%)",
-                    opacity: 1,
-                    y: "-5%",
-                    scale: 0.8
-                }, "+=0.4")
+            tl.fromTo(".video-wrapper", {
+                clipPath: "inset(100% 0% 0% 0%)",
+                opacity: 0,
+                y: 40,
+                scale: 1.01,
+                position: "absolute",
+                right: "30vw"
+            }, {
+                clipPath: "inset(0% 0% 0% 0%)",
+                opacity: 1,
+                y: "-5%",
+                scale: 0.8
+            }, "+=0.4")
                 .to(".video-wrapper", {
                     right: "0vw",
                     y: 0,
                     scale: 1
-                }, "+=15")
+                }, "+=3")
                 .fromTo(".video-wrapper video", { scale: 1.05, opacity: 1 }, { scale: 1, opacity: 1 }, "-=0.6")
                 .fromTo(lines, { opacity: 0, y: 60 }, {
                     opacity: 1,
                     y: 0,
-                    duration: 2,
-                    stagger: 0.8
-                }, "-=1.6") // SplitText animation
-                .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "+=1")
-                .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.2");
+                    duration: 1.5,
+                    stagger: 0.8,
+                    ease: "power2.out"
+                }, "-=0.6")
+                .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "+=0.8")
+                .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.2")
+                .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.2");
         });
 
 
         mm.add("(max-width: 699px)", () => {
             const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
-            tl.fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "+=0.1")
-                .fromTo(".video-wrapper", {
-                    clipPath: "inset(100% 0% 0% 0%)",
-                    opacity: 0,
-                    scale: 0.7,
-                    y: -150,
-                    margin: "0 auto"
-                }, {
-                    clipPath: "inset(0% 0% 0% 0%)",
-                    opacity: 1,
-                    scale: .7,
-                    y: -50
-                }, "+=0.8")
+            tl.fromTo(".video-wrapper", {
+                clipPath: "inset(100% 0% 0% 0%)",
+                opacity: 0,
+                scale: 0.7,
+                y: -150,
+                margin: "0 auto"
+            }, {
+                clipPath: "inset(0% 0% 0% 0%)",
+                opacity: 1,
+                scale: .7,
+                y: -50
+            }, "+=0.8")
                 .fromTo(".video-wrapper", {
                     scale: .7,
                     y: -50
@@ -118,10 +118,16 @@
                 }, "+=0.8")
                 .fromTo(".video-wrapper video", { opacity: 0.8 }, { opacity: 1 }, "-=0.4")
                 .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.8")
-                .fromTo("h1", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.6")
+                .fromTo(lines, { opacity: 0, y: 60 }, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                    stagger: 0.8,
+                    ease: "power2.out"
+                }, "-=0.6")
                 .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.7")
-            // .fromTo("footer", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=0.4")
-            // .fromTo(".copyright", { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, "-=0.5");
+                .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "+=0.1")
+
         });
 
         gsap.registerPlugin(ScrollTrigger);
