@@ -89,8 +89,8 @@
                     ease: "power2.out"
                 }, "-=0.6")
                 .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "+=1.2")
-                .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.2")
-                .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.2");
+                .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=1")
+                .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.6");
         });
 
 
@@ -107,7 +107,7 @@
             tl.fromTo(".video-wrapper", {
                 clipPath: "inset(100% 0% 0% 0%)",
                 opacity: 0,
-                scale: 0.7,
+                scale: 0.5,
                 y: -150,
                 margin: "0 auto"
             }, {
@@ -121,7 +121,7 @@
                 }, {
                     scale: .7,
                 }, "+=0.8")
-                .fromTo(".video-wrapper", { scale: .7, y: 0 }, { scale: 1, y: 10 }, "-=0.4")
+                .fromTo(".video-wrapper", { scale: .7, y: 0 }, { scale: 1, y: 10, duration: 3, ease: "power2.inOut" }, "-=0.4")
                 .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.8")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.8")
                 .fromTo(lines, { opacity: 0, y: 30 }, {
