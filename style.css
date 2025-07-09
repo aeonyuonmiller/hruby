@@ -226,8 +226,8 @@ nav .links {
     /* width: 40vw; */
     aspect-ratio: 4/5;
     min-height: calc(100vh - 200px);
-    background: rgb(178, 178, 178);
-    background-image: url("assets/video-poster.png");
+    /* background: rgb(178, 178, 178); */
+    /* background-image: url("assets/video-poster.png"); */
 }
 
 video {
