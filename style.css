@@ -227,7 +227,9 @@ nav .links {
     overflow: hidden;
     width: 40vw;
     /* aspect-ratio: 4/5; */
-    min-height: calc(100vh - 200px);
+    height: 600px;
+    opacity: 0;
+    /* min-height: calc(100vh - 200px); */
     /* background: rgb(178, 178, 178); */
     /* background-image: url("assets/video-poster.png"); */
 }
@@ -242,15 +244,15 @@ video {
 }
 
 @media only screen and (max-width: 700px) {
-    /* body {
-        font-size: 14px !important;
-    } */
+    body {
+        font-size: 12px !important;
+    }
 
     .welcome {
         position: relative;
         /* top: calc(50vh + 150px); */
         /* top: 820px; */
-        top: calc(60vh + 200px);
+        top: 620px;
         left: 30px;
         width: 320px;
         display: flex;
@@ -268,17 +270,18 @@ video {
     .video-wrapper {
         position: absolute;
         width: calc(100% - 60px);
-        /* min-height: 660px; */
+        min-height: 460px;
         height: 30vh;
+        /* max-height: 400px; */
         left: 30px;
-        aspect-ratio: none;
+        aspect-ratio: 4/5;
         /* height: 33svh; */
         top: 90px;
     }
 
     footer {
         /* top: calc(100svh + 320px); */
-        top: 800px;
+        top: 850px;
         height: 160px;
         left: 0px;
         font-size: 14px !important;

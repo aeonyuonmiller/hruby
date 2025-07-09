@@ -66,18 +66,16 @@
 
             tl.fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.2 }, "-=0.1")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.6")
-                .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1, duration: 0.2 }, "+=0.1")
                 .fromTo("#automatic", { opacity: 0 }, { opacity: 1, duration: .4 }, "+=0.1")
+                .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1 }, "+=0.1")
                 .fromTo(".video-wrapper", {
                     // clipPath: "inset(100% 0% 0% 0%)",
-                    autoAlpha: 0,
                     // y: 40,
                     scale: 1,
                     position: "absolute",
                     right: "30vw"
                 }, {
                     // clipPath: "inset(0% 0% 0% 0%)",
-                    autoAlpha: 1,
                     // y: "-5%",
                     scale: 1,
                     duration: .2
