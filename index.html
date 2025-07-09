@@ -35,7 +35,7 @@
         </video>
     </div>
 
-    <footer id="contact">
+    <footer class="view" id="contact">
         <span>
             <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
             <div class="spacer"></div>
@@ -130,7 +130,7 @@
                     opacity: 1,
                     y: 0,
                     duration: 1.5,
-                    stagger: 0.5,
+                    stagger: 0.05,
                     ease: "power2.out"
                 }, "-=0.6")
                 .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "+=1.2")
@@ -140,7 +140,7 @@
 
         // Animate footer on scroll into view
         gsap.fromTo("footer",
-            { opacity: 0, y: 100 },
+            { opacity: 1, y: 40 },
             {
                 opacity: 1,
                 y: 0,
@@ -156,24 +156,6 @@
             }
         );
 
-        // Animate copyright as well
-        // gsap.fromTo(".copyright",
-        //     { opacity: 0, y: 20 },
-        //     {
-        //         opacity: 1,
-        //         y: 0,
-        //         duration: 1,
-        //         ease: "power2.out",
-        //         scrollTrigger: {
-        //             trigger: ".copyright",
-        //             start: "top 99%",
-        //             toggleActions: "play none none none"
-        //         }
-        //     }
-        // );
-
-
-
 
         const video = document.getElementById('automatic');
 
@@ -181,6 +163,20 @@
             video.muted = true;
             video.play();
         }
+
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.view').forEach(el => {
+            observer.observe(el);
+        });
+
 
     </script>
 
