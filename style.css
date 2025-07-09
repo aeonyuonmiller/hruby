@@ -115,9 +115,10 @@ a:hover {
 footer {
     position: absolute;
     display: flex;
-    align-items: start;
+    align-items: end;
     /* justify-content: space-between; */
-    top: calc(100vh + 170px);
+    /* top: calc(100vh + 200px); */
+    top: 130vh;
     /* height: 120px; */
     left: 0;
     width: 100%;
@@ -132,7 +133,7 @@ footer {
 footer span {
     position: absolute;
     /* top: calc(100vh + 50px); */
-    height: 160px;
+    height: 180px;
     left: 60px;
     columns: 2;
     gap: 60px;
@@ -147,7 +148,8 @@ footer .spacer {
     position: absolute;
     height: 20px;
     right: 60px;
-    bottom: 60px;
+    bottom: 30px;
+    height: 20px;
     /* text-align: right; */
     font-family: 'Atlas Grotesk', sans-serif;
     font-size: 15px;
@@ -223,8 +225,8 @@ nav .links {
     top: 125px;
     right: 0px;
     overflow: hidden;
-    /* width: 40vw; */
-    aspect-ratio: 4/5;
+    width: 40vw;
+    /* aspect-ratio: 4/5; */
     min-height: calc(100vh - 200px);
     /* background: rgb(178, 178, 178); */
     /* background-image: url("assets/video-poster.png"); */
