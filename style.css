@@ -115,7 +115,7 @@ a:hover {
 footer {
     position: absolute;
     display: flex;
-    align-items: end;
+    align-items: start;
     /* justify-content: space-between; */
     top: calc(100vh + 170px);
     /* height: 120px; */
@@ -145,7 +145,6 @@ footer .spacer {
 
 .copyright {
     position: absolute;
-    width: fit-content;
     height: 20px;
     right: 60px;
     bottom: 60px;
