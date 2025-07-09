@@ -29,8 +29,8 @@
     </div>
 
     <div class="video-wrapper">
-        <video id="automatic" preload="none" autoplay muted playsinline poster="assets/video-poster.png">
-            <source src="assets/slideshow.mp4" type="video/mp4" />
+        <video id="automatic" preload="none" muted playsinline poster="assets/video-poster.png">
+            <source src="assets/slideshow2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
     </div>
@@ -38,9 +38,9 @@
     <footer class="view" id="contact">
         <span>
             <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
+            +49 173 38 20 599
             <div class="spacer"></div>
             Appointments by<br />arrangement.<br /><br />
-            +49 173 38 20 599<br />
             Friedrichstr. 3<br />
             80801 München<br />
             Germany
@@ -59,23 +59,29 @@
             const split = new SplitText("h1", { type: "lines" });
             const lines = split.lines;
 
+            // video playback
+            const video = document.getElementById('automatic');
+
             const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
-            tl.fromTo(".video-wrapper", {
-                // clipPath: "inset(100% 0% 0% 0%)",
-                autoAlpha: 0,
-                // y: 40,
-                scale: 0.78,
-                position: "absolute",
-                right: "30vw"
-            }, {
-                // clipPath: "inset(0% 0% 0% 0%)",
-                autoAlpha: 1,
-                // y: "-5%",
-                scale: 0.8
-            }, "+=0.4")
-                .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=1")
+            tl.fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.2 }, "-=0.1")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.6")
+                // .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1, duration: 0.2 }, "+=0.1")
+                .fromTo(".video-wrapper", {
+                    // clipPath: "inset(100% 0% 0% 0%)",
+                    autoAlpha: 0,
+                    // y: 40,
+                    scale: 1,
+                    position: "absolute",
+                    right: "30vw"
+                }, {
+                    // clipPath: "inset(0% 0% 0% 0%)",
+                    autoAlpha: 1,
+                    // y: "-5%",
+                    scale: 1,
+                    duration: .2
+                }, "+=0.4")
+                .call(() => video.play())
                 .to(".video-wrapper", {
                     right: 0,
                     y: 0,
@@ -87,11 +93,11 @@
                 .fromTo(lines, { opacity: 0, y: 60 }, {
                     opacity: 1,
                     y: 0,
-                    duration: 1.5,
-                    stagger: 0.5,
+                    duration: .8,
+                    stagger: 0.2,
                     ease: "power2.out"
-                }, "-=0.6")
-                .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "+=.8")
+                }, "+=0.6")
+                .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "+=.6")
                 ;
         });
 
@@ -104,28 +110,33 @@
             const split = new SplitText("h1", { type: "words" });
             const words = split.words;
 
+            // video playback
+            const video = document.getElementById('automatic');
+
             const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
-            tl.fromTo(".video-wrapper", {
-                // clipPath: "inset(100% 0% 0% 0%)",
-                opacity: 0,
-                // scale: 0.68,
-                // y: -50,
-                // margin: "0 auto"
-            }, {
-                // clipPath: "inset(0% 0% 0% 0%)",
-                opacity: 1,
-                // scale: .7,
-                // y: -50
-            }, "+=0.8")
-                .fromTo("nav", { opacity: 0, y: 0 }, { opacity: 1, y: 0 }, "-=0.8")
+            tl.fromTo("nav", { opacity: 0, y: 0 }, { opacity: 1, y: 0 }, "-=0.8")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.8")
+                .fromTo(".video-wrapper", {
+                    // clipPath: "inset(100% 0% 0% 0%)",
+                    opacity: 0,
+                    // scale: 0.68,
+                    // y: -50,
+                    // margin: "0 auto"
+                }, {
+                    // clipPath: "inset(0% 0% 0% 0%)",
+                    opacity: 1,
+                    // scale: .7,
+                    // y: -50
+                    duration: .2
+                }, "+=0.8")
                 // .fromTo(".video-wrapper", {
                 //     scale: .7,
                 // }, {
                 //     scale: .7,
                 // }, "+=0.8")
                 .fromTo(".video-wrapper", { y: 0, scale: .7 }, { y: 10, scale: 1, duration: 3, ease: "power2.inOut" }, "-=0.4")
+                .call(() => video.play())
                 .fromTo(words, { opacity: 0, y: 30 }, {
                     opacity: 1,
                     y: 0,
