@@ -24,7 +24,7 @@
     </nav>
 
     <div class="welcome">
-        <h1>Homes crafted for<br />lasting memories.</h1>
+        <h1>Homes crafted for lasting memories.</h1>
         <h2>New website coming soon …</h2>
     </div>
 
@@ -101,8 +101,8 @@
 
             // const split = new SplitText("h1", { type: "words,chars" });
             // const chars = split.chars;
-            const split = new SplitText("h1", { type: "lines" });
-            const lines = split.lines;
+            const split = new SplitText("h1", { type: "words" });
+            const words = split.words;
 
             const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
@@ -126,7 +126,7 @@
                 .fromTo(".video-wrapper", { scale: .7, y: 0 }, { scale: 1, y: 10, duration: 3, ease: "power2.inOut" }, "-=0.4")
                 .fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0 }, "-=0.8")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.8")
-                .fromTo(lines, { opacity: 0, y: 30 }, {
+                .fromTo(words, { opacity: 0, y: 30 }, {
                     opacity: 1,
                     y: 0,
                     duration: 1.5,
