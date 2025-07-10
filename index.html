@@ -121,6 +121,7 @@
 
             tl.fromTo("nav", { opacity: 0, y: 0 }, { opacity: 1, y: 0 }, "-=0.8")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.8")
+                .call(() => video.play())
                 .fromTo(".video-wrapper", {
                     // clipPath: "inset(100% 0% 0% 0%)",
                     opacity: 0,
@@ -132,12 +133,11 @@
                     opacity: 1,
                     // scale: .7,
                     // y: -50
-                    duration: .2
-                }, "+=0.8")
+                    duration: .4
+                })
                 .fromTo("#automatic",
                     { opacity: 0, visibility: "hidden" },
-                    { opacity: 1, visibility: "visible", duration: 0.4 },
-                    "+=0.1"
+                    { opacity: 1, visibility: "visible", duration: 0.4 }
                 )
                 // .fromTo(".video-wrapper", {
                 //     scale: .7,
@@ -145,7 +145,6 @@
                 //     scale: .7,
                 // }, "+=0.8")
                 .fromTo(".video-wrapper", { y: 0, scale: 1 }, { y: 0, scale: 1, duration: 3, ease: "power2.inOut" }, "-=0.4")
-                .call(() => video.play())
                 .fromTo(words, { opacity: 0, y: 30 }, {
                     opacity: 1,
                     y: 0,
