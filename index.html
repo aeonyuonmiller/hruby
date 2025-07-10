@@ -30,7 +30,7 @@
     </div>
 
     <div class="video-wrapper">
-        <video id="automatic" muted playsinline poster="assets/video-poster.png" preload="none">
+        <video id="automatic" muted playsinline poster="assets/video-poster.png" preload="metadata">
             <source src="assets/slideshow2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
@@ -69,11 +69,11 @@
 
             const tl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
-            tl.fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.2 }, "-=0.1")
+            tl.fromTo("nav", { opacity: 0, y: 0 }, { opacity: 1, y: 0, duration: 0.2 }, "0.1")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.6")
-                .fromTo("#automatic", { opacity: 0 }, { opacity: 1, duration: .2 }, "+=0.1")
-                .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1, duration: .3 }, "+=0.1")
                 .call(() => video.play())
+                .fromTo("#automatic ", { opacity: 0 }, { opacity: 1, duration: .4 })
+                .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1, duration: .4 })
                 .fromTo(".video-wrapper", {
                     // clipPath: "inset(100% 0% 0% 0%)",
                     // y: 40,
@@ -134,7 +134,11 @@
                     // y: -50
                     duration: .2
                 }, "+=0.8")
-                .fromTo("#automatic", { opacity: 0 }, { opacity: 1, duration: .2 }, "-=0.8")
+                .fromTo("#automatic",
+                    { opacity: 0, visibility: "hidden" },
+                    { opacity: 1, visibility: "visible", duration: 0.4 },
+                    "+=0.1"
+                )
                 // .fromTo(".video-wrapper", {
                 //     scale: .7,
                 // }, {
