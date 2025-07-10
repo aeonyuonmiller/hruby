@@ -24,26 +24,32 @@
     </nav>
 
     <div class="welcome">
-        <h1>Homes crafted for lasting memories.</h1>
+        <h1>Homes crafted for<br>
+            lasting memories.</h1>
         <h2>New website coming soon …</h2>
     </div>
 
     <div class="video-wrapper">
-        <video id="automatic" preload="none" muted playsinline poster="assets/video-poster.png">
+        <video id="automatic" preload="none" autoplay muted playsinline poster="assets/video-poster.png">
             <source src="assets/slideshow2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <footer class="view" id="contact">
+    <footer id="contact">
         <span>
-            <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
-            +49 173 38 20 599
-            <div class="spacer"></div>
-            Appointments by<br />arrangement.<br />
-            Friedrichstr. 3<br />
-            80801 München<br />
-            Germany
+            <div class="view">
+                <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
+                +49 173 38 20 599
+                <div class="spacer"></div>
+                Appointments by<br>
+                arrangement.
+            </div>
+            <div class="view">
+                Friedrichstr. 3<br />
+                80801 München<br />
+                Germany
+            </div>
         </span>
 
         <div class="copyright">&copy; Hruby</div>
@@ -66,21 +72,21 @@
 
             tl.fromTo("nav", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.2 }, "-=0.1")
                 .fromTo(".logo", { opacity: 0 }, { opacity: 1 }, "-=0.6")
-                .fromTo("#automatic", { opacity: 0 }, { opacity: 1, duration: .4 }, "+=0.1")
-                .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1 }, "+=0.1")
+                .fromTo("#automatic", { opacity: 0 }, { opacity: 1, duration: .2 }, "+=0.1")
+                .fromTo(".video-wrapper", { opacity: 0 }, { opacity: 1, duration: .3 }, "+=0.1")
+                .call(() => video.play())
                 .fromTo(".video-wrapper", {
                     // clipPath: "inset(100% 0% 0% 0%)",
                     // y: 40,
                     scale: 1,
                     position: "absolute",
-                    right: "30vw"
+                    right: "33vw"
                 }, {
                     // clipPath: "inset(0% 0% 0% 0%)",
                     // y: "-5%",
                     scale: 1,
                     duration: .2
                 }, "+=0.4")
-                .call(() => video.play())
                 .to(".video-wrapper", {
                     right: 0,
                     y: 0,
@@ -129,12 +135,13 @@
                     // y: -50
                     duration: .2
                 }, "+=0.8")
+                .fromTo("#automatic", { opacity: 0 }, { opacity: 1, duration: .2 }, "-=0.8")
                 // .fromTo(".video-wrapper", {
                 //     scale: .7,
                 // }, {
                 //     scale: .7,
                 // }, "+=0.8")
-                .fromTo(".video-wrapper", { y: 0, scale: .7 }, { y: 10, scale: 1, duration: 3, ease: "power2.inOut" }, "-=0.4")
+                .fromTo(".video-wrapper", { y: 0, scale: 1 }, { y: 0, scale: 1, duration: 3, ease: "power2.inOut" }, "-=0.4")
                 .call(() => video.play())
                 .fromTo(words, { opacity: 0, y: 30 }, {
                     opacity: 1,
