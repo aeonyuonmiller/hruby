@@ -30,7 +30,7 @@
     </div>
 
     <div class="video-wrapper">
-        <video id="automatic" autoplay muted playsinline poster="assets/video-poster.png" preload="metadata">
+        <video id="automatic" muted playsinline poster="assets/video-poster.png" preload="metadata">
             <source src="assets/slideshow2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
@@ -40,9 +40,10 @@
         <span class="view">
             <div>
                 <a href="mailto:info@hruby.studio">info@hruby.studio</a><br />
-                +49 173 38 20 599
-                <div class="spacer"></div>
-                Appointments by<br> arrangement.
+                +49 173 38 20 599<br>
+                <!-- <div class="spacer"></div> -->
+                <!-- Appointments by<br> arrangement. -->
+                By appointments only.
             </div>
             <div>
                 Friedrichstr. 3<br />
@@ -92,7 +93,7 @@
                     scale: 1,
                     duration: 1.6,
                     ease: "power4.inOut"
-                }, "+=15")
+                }, "+=13")
                 // .fromTo(".video-wrapper video", { scale: 1.05, opacity: 1 }, { scale: 1, opacity: 1 }, "-=0.6")
                 .fromTo(lines, { opacity: 0, y: 60 }, {
                     opacity: 1,
@@ -100,8 +101,8 @@
                     duration: .8,
                     stagger: 0.2,
                     ease: "power2.out"
-                }, "+=0.6")
-                .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "+=.6")
+                }, "-=1.6")
+                .fromTo("h2", { opacity: 0, y: 40 }, { opacity: 1, y: 0 }, "-=1")
                 ;
         });
 
@@ -144,7 +145,7 @@
                 // }, {
                 //     scale: .7,
                 // }, "+=0.8")
-                .fromTo(".video-wrapper", { y: 0, scale: 1 }, { y: 0, scale: 1, duration: 3, ease: "power2.inOut" }, "+=15")
+                .fromTo(".video-wrapper", { y: 0, scale: 1 }, { y: 0, scale: 1, duration: 3, ease: "power2.inOut" }, "+=13")
                 .fromTo(words, { opacity: 0, y: 30 }, {
                     opacity: 1,
                     y: 0,
@@ -152,14 +153,14 @@
                     stagger: 0.05,
                     ease: "power2.out"
                 }, "-=0.6")
-                .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "+=0.8")
+                .fromTo("h2", { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=1")
         });
 
         // gsap.registerPlugin(ScrollTrigger);
 
         // Animate footer on scroll into view
         gsap.fromTo("footer",
-            { opacity: 1, y: 20 },
+            { opacity: 1, y: 40 },
             {
                 opacity: 1,
                 y: 0,
