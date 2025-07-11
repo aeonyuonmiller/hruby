@@ -135,7 +135,7 @@ footer span {
     /* top: calc(100vh + 50px); */
     /* height: 180px; */
     left: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     /* columns: 2; */
     gap: 60px;
     font-family: 'Atlas Grotesk', sans-serif;
@@ -253,7 +253,7 @@ video {
 
     .welcome {
         position: relative;
-        top: calc(100svh - 300px);
+        top: calc(100svh - 119px);
         /* top: 820px; */
         /* top: 620px; */
         left: 30px;
@@ -273,8 +273,8 @@ video {
     .video-wrapper {
         position: absolute;
         width: calc(100% - 60px);
-        min-height: 460px;
-        height: 30svh;
+        min-height: 300px;
+        height: 60svh;
         aspect-ratio: unset;
         /* max-height: 400px; */
         left: 30px;
@@ -284,10 +284,9 @@ video {
     }
 
     footer {
-        top: calc(100svh + 152px);
+        top: calc(100svh + 200px);
         /* top: 950px; */
         /* top: calc(100svh + 90px); */
-        gap: 90px;
         /* height: 160px; */
         left: 0px;
         font-size: 14px !important;
@@ -299,7 +298,7 @@ video {
     }
 
     .copyright {
-        position: absolute;
+        /* position: absolute; */
         right: 30px;
         bottom: 30px;
         font-size: 13px !important;
